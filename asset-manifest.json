@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/pokemonStore/static/css/main.65fadca3.css",
-    "main.js": "/pokemonStore/static/js/main.ffe6446b.js",
-    "static/js/787.e9e625c3.chunk.js": "/pokemonStore/static/js/787.e9e625c3.chunk.js",
-    "static/media/shield.png": "/pokemonStore/static/media/shield.473fc8ca18efa5b8babd.png",
-    "static/media/pokemon-logo-png-pokemon-logo-black-transparent-1600-e1595964952147.png": "/pokemonStore/static/media/pokemon-logo-png-pokemon-logo-black-transparent-1600-e1595964952147.1bf7d08025323b7938d4.png",
-    "static/media/special-attack.png": "/pokemonStore/static/media/special-attack.e8989156ad8719251887.png",
-    "static/media/fast.png": "/pokemonStore/static/media/fast.da64916248472f5520ba.png",
-    "static/media/pikachu.png": "/pokemonStore/static/media/pikachu.cb81c8c0d7c92787bb35.png",
-    "static/media/special-defense.png": "/pokemonStore/static/media/special-defense.15c1b2aa7f5fce1b417b.png",
-    "static/media/user.png": "/pokemonStore/static/media/user.1395f898769771020976.png",
-    "static/media/pokeball.png": "/pokemonStore/static/media/pokeball.b20d1afa236836b39e33.png",
-    "static/media/attack.png": "/pokemonStore/static/media/attack.c2f8802c3dbfe6177027.png",
-    "static/media/hp.png": "/pokemonStore/static/media/hp.dbd31cd6330a6f822e21.png",
-    "static/media/home.png": "/pokemonStore/static/media/home.f7091fc33a72f1fa7e67.png",
-    "static/media/shopping-cart.png": "/pokemonStore/static/media/shopping-cart.97dedf051bf87f5a4db4.png",
-    "index.html": "/pokemonStore/index.html",
-    "main.65fadca3.css.map": "/pokemonStore/static/css/main.65fadca3.css.map",
-    "main.ffe6446b.js.map": "/pokemonStore/static/js/main.ffe6446b.js.map",
-    "787.e9e625c3.chunk.js.map": "/pokemonStore/static/js/787.e9e625c3.chunk.js.map"
+    "main.css": "/PokemonStore/static/css/main.65fadca3.css",
+    "main.js": "/PokemonStore/static/js/main.855fa605.js",
+    "static/js/787.e9e625c3.chunk.js": "/PokemonStore/static/js/787.e9e625c3.chunk.js",
+    "static/media/shield.png": "/PokemonStore/static/media/shield.473fc8ca18efa5b8babd.png",
+    "static/media/pokemon-logo-png-pokemon-logo-black-transparent-1600-e1595964952147.png": "/PokemonStore/static/media/pokemon-logo-png-pokemon-logo-black-transparent-1600-e1595964952147.1bf7d08025323b7938d4.png",
+    "static/media/special-attack.png": "/PokemonStore/static/media/special-attack.e8989156ad8719251887.png",
+    "static/media/fast.png": "/PokemonStore/static/media/fast.da64916248472f5520ba.png",
+    "static/media/pikachu.png": "/PokemonStore/static/media/pikachu.cb81c8c0d7c92787bb35.png",
+    "static/media/special-defense.png": "/PokemonStore/static/media/special-defense.15c1b2aa7f5fce1b417b.png",
+    "static/media/user.png": "/PokemonStore/static/media/user.1395f898769771020976.png",
+    "static/media/pokeball.png": "/PokemonStore/static/media/pokeball.b20d1afa236836b39e33.png",
+    "static/media/attack.png": "/PokemonStore/static/media/attack.c2f8802c3dbfe6177027.png",
+    "static/media/hp.png": "/PokemonStore/static/media/hp.dbd31cd6330a6f822e21.png",
+    "static/media/home.png": "/PokemonStore/static/media/home.f7091fc33a72f1fa7e67.png",
+    "static/media/shopping-cart.png": "/PokemonStore/static/media/shopping-cart.97dedf051bf87f5a4db4.png",
+    "index.html": "/PokemonStore/index.html",
+    "main.65fadca3.css.map": "/PokemonStore/static/css/main.65fadca3.css.map",
+    "main.855fa605.js.map": "/PokemonStore/static/js/main.855fa605.js.map",
+    "787.e9e625c3.chunk.js.map": "/PokemonStore/static/js/787.e9e625c3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.65fadca3.css",
-    "static/js/main.ffe6446b.js"
+    "static/js/main.855fa605.js"
   ]
 }
