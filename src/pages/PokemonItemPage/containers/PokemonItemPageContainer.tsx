@@ -42,7 +42,7 @@ const PokemonItemPageContainer = () => {
     const dispatch = useDispatch()
     const { pokemonName } = useParams()
     const { pokemonItem, isLoading } = useSelector(pokemonsItemSelector)
-    console.log('1')
+
     useEffect(() => {
         dispatch(GET_POKEMON_ITEM_REQUEST(pokemonName))
     }, [dispatch, pokemonName])
