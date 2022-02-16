@@ -1,0 +1,14 @@
+.homePageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pokemonLogo {
+    width: 50%;
+}
+.inputStyle{
+    margin-bottom:100px;
+}
+
