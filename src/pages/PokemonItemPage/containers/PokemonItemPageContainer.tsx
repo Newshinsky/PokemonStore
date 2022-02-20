@@ -32,8 +32,8 @@ export type pokemonItemType = {
 
 export type pokemonItemPageType = {
     pokemonItem: pokemonItemType,
-    isLoading: false,
-    errors: null,
+    isLoading: boolean,
+    errors: null | string,
 }
 
 

@@ -9,12 +9,12 @@ import styles from "./pokemonItem.module.css";
 
 
 type imageItemType = {
-  hp: string,
-  attack: string,
-  defense: string,
+  "hp": string,
+  "attack": string,
+  "defense": string,
   "special-attack": string,
   "special-defense": string,
-  speed: string,
+  "speed": string,
 }
 
 const imageItem: any = {
@@ -28,7 +28,7 @@ const imageItem: any = {
 
 type PropsType = {
   pokemonItem: pokemonItemType,
-  isLoading: false,
+  isLoading: boolean,
 }
 const animationName = "animate__animated  animate__fadeInDownBig  animate__slow"
 const PokemonItem = React.memo((props: PropsType) => {

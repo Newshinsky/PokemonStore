@@ -4,6 +4,7 @@ import * as actions from "../actions/index"
 
 
 
+
 const defaultState = {
     userData: {
     },
@@ -23,7 +24,6 @@ export const authPageReducer = handleActions({
         };
     },
     [actions.SIGN_IN_SUCCESS.toString()]: (state, { payload }) => {
-
 
         const { accessToken, ...userData } = payload.response;
 
