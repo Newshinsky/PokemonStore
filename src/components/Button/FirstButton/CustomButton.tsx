@@ -4,12 +4,15 @@ import styles from "./CustomButton.module.css"
 
 export type PropsType = {
     buttonMove: string
+    id?: string,
+    className?: string
+    handleClick?: () => void
 }
 
 const CustomButton = React.memo((props: PropsType) => {
     return (
         <>
-            <button className={`${styles.button}`}>
+            <button onClick={props.handleClick} className={`${styles.button}`}>
                 {props.buttonMove}
             </button>
         </>

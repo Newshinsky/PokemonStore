@@ -33,7 +33,6 @@ const PokemonsPageContainer = () => {
 
     useEffect(() => {
         dispatch(GET_POKEMON_REQUEST(page))
-
         return localStorage.setItem('page', page.toString())
     }, [dispatch, page])
 
