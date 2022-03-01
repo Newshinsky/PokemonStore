@@ -3,7 +3,7 @@ export const ROUTES_NAMES = {
     POKEMON: "/PokemonStore/pokemon",
     POKEMON_ITEM: "/PokemonStore/pokemon/:pokemonName",
     PROFILE: "/PokemonStore/profile",
-    HOME: "/PokemonStore/Home",
+    HOME: "/PokemonStore/",
     LOGIN: "/PokemonStore/Login",
     REGISTER: "/PokemonStore/Register"
 };
