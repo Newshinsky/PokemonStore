@@ -10,6 +10,7 @@
 //     try {
 //         const response = yield call(PokemonService.getPokemons)
 //         yield put(actions.GET_POKEMON_SUCCESS(response))
+
 //     } catch (err) {
 //         yield put(actions.GET_POKEMON_FAIL(err))
 //     }

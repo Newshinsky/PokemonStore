@@ -19,6 +19,11 @@ export class AuthService {
         return api.post(`/auth/signup`, signData)
     }
 
+    signOut() {
+        localStorage.clear()
+        window.location.reload()
+    }
+
 }
 
 export default AuthService.instance

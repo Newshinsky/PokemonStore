@@ -5,6 +5,9 @@ import { authPageReducer } from "../pages/LoginPage/reducers";
 import { pokemonItemPageReducer } from "../pages/PokemonItemPage/reducers";
 import { pokemonsPageReducer } from "../pages/PokemonsPage/reducers";
 import { persistReducer } from "redux-persist";
+import { cartPageReducer } from "../pages/BasketPage/reducers";
+import { orderReducer } from "../pages/ProfilePage/reducers";
+import { registerPageReducer } from "../pages/RegisterPage/reducers";
 
 
 export type AppRootStateType = ReturnType<typeof rootReducer>
@@ -25,9 +28,12 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
+    cartPage: cartPageReducer,
     auth: authPageReducer,
     pokemonsPage: pokemonsPageReducer,
     pokemonItem: pokemonItemPageReducer,
+    profilePage: orderReducer,
+    registerPage: registerPageReducer
 
 })
 

@@ -1,10 +1,7 @@
 .loginBox {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 100px;
     width: 350px;
-    height: 50%;
+    height: 100%;
     padding: 70px 40px;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.5);
@@ -22,13 +19,21 @@
     margin: 10% 25%
 }
 
-.loginBox input {
+.loginBox select option {
+    color: #ff8c00;
+}
+
+.loginBox input,
+.loginBox select {
     width: 100%;
     margin-bottom: 20px;
 }
 
 .loginBox input[type="email"],
-.loginBox input[type="password"] {
+.loginBox input[type="password"],
+.loginBox input[type="text"],
+.loginBox select {
+
     border: none;
     border-bottom: 1px solid #fff;
     background: transparent;

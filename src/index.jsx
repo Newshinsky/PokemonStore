@@ -1,13 +1,14 @@
+
+import 'normalize.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'normalize.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
-import { configureStore } from './store/configureStore';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { configureStore } from './store/configureStore';
 
 
 const store = configureStore()

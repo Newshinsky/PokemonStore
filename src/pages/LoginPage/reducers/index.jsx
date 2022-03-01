@@ -6,12 +6,11 @@ import * as actions from "../actions/index"
 
 
 const defaultState = {
-    userData: {
-    },
+    userData: {},
     isLoading: false,
     errors: null,
     accessToken: null,
-    isAuth: false
+    isAuth: false,
 };
 
 export const authPageReducer = handleActions({
@@ -24,9 +23,7 @@ export const authPageReducer = handleActions({
         };
     },
     [actions.SIGN_IN_SUCCESS.toString()]: (state, { payload }) => {
-
         const { accessToken, ...userData } = payload.response;
-
         localStorage.setItem(LOCAL_STORAGE_KEY.ACCESS_TOKEN, accessToken);
 
         return {
@@ -34,7 +31,7 @@ export const authPageReducer = handleActions({
             isAuth: true,
             isLoading: false,
             userData,
-            accessToken
+            accessToken,
         }
     },
     [actions.SIGN_IN_FAIL.toString()]: (state, { payload }) => {

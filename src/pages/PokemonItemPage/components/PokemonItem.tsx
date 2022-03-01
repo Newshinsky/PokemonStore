@@ -1,7 +1,7 @@
 import ProgressBar from "@ramonak/react-progress-bar";
 import 'animate.css';
-import React from 'react';
-import FirstButton from '../../../components/Button/FirstButton/CustomButton';
+import React, { memo } from 'react';
+import FirstButton from '../../../components/Button/DefaultButton/CustomButton';
 import Loaders from '../../../components/Loaders/Loaders';
 import { STATS_ICONS } from '../../../constants/StatsIcons';
 import { pokemonItemType } from '../containers/PokemonItemPageContainer';
@@ -29,9 +29,10 @@ const imageItem: any = {
 type PropsType = {
   pokemonItem: pokemonItemType,
   isLoading: boolean,
+  addItemCart: (id: number) => void
 }
 const animationName = "animate__animated  animate__fadeInDownBig  animate__slow"
-const PokemonItem = React.memo((props: PropsType) => {
+const PokemonItem = memo((props: PropsType) => {
   return (
     <>
       {props.isLoading
@@ -50,7 +51,7 @@ const PokemonItem = React.memo((props: PropsType) => {
                   return <p key={i}>{i + 1}: {e.title.toLocaleUpperCase()}</p>
                 })}
               </div>
-              <FirstButton buttonMove={'Add'} />
+              <FirstButton handleClick={() => props.addItemCart(props.pokemonItem.id)} buttonName={'Add'} />
             </div>
             <div className={`${styles.pokemonSkills}  ${animationName} animate__delay-2s`}>
               {props.pokemonItem.stats.map((e, i) => {

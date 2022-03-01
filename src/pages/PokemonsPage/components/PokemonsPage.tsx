@@ -1,26 +1,25 @@
-import React, { ChangeEvent } from 'react'
+import React, { ChangeEvent, memo } from 'react'
 import { Link } from 'react-router-dom'
-
-import FirstButton from '../../../components/Button/FirstButton/CustomButton'
+import FirstButton from '../../../components/Button/DefaultButton/CustomButton'
 import Loaders from '../../../components/Loaders/Loaders'
 import CustomPagination from '../../../components/Pagination'
 import { ROUTES_NAMES } from '../../../routes/RoutesNames'
 import { PokemonsListType } from '../containers/PokemonsPageContainer'
-
 import styles from "./PokemonsPage.module.css"
+
+
 
 
 
 type PropsType = {
   pokemonsList: PokemonsListType[],
   isLoading: boolean,
-  sortBy: () => void
-  handlePageChange: (event: ChangeEvent<unknown>, page: number) => void
-  page: number
+  handlePageChange: (event: ChangeEvent<unknown>, page: number) => void,
+  page: number,
+  addItemCart: (id: number) => void,
 }
 
-const PokemonsPage = React.memo((props: PropsType) => {
-
+const PokemonsPage = memo((props: PropsType) => {
   return (
     <>
       <CustomPagination
@@ -43,7 +42,7 @@ const PokemonsPage = React.memo((props: PropsType) => {
                       <Link to={`${ROUTES_NAMES.POKEMON}/${e.id}`} >
                         Read More
                       </Link>
-                      <FirstButton buttonMove="Add" />
+                      <FirstButton handleClick={() => props.addItemCart(e.id)} buttonName="Add" />
                     </div>
                   </div>
                 </div>

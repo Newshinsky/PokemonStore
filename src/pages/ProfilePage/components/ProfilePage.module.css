@@ -1,0 +1,21 @@
+.orderName {
+  color: rgb(223, 214, 86);
+margin: 5px;
+}
+
+.orderWrapper {
+  margin-top: 50px;
+}
+
+.orderNameWrapper {
+  display: flex;
+  flex-direction: column
+}
+
+
+.itemWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

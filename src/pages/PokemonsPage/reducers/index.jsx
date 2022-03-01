@@ -28,12 +28,5 @@ export const pokemonsPageReducer = handleActions({
       errors: payload.response
     }
   },
-  [actions.SORT_POKEMON_BY_NAME.toString()]: (state) => {
-    console.log(state.pokemonsList.sort((a, b) => a.price - b.price))
-    return {
-      ...state,
-      pokemonsList: state.pokemonsList.sort((a, b) => a.price - b.price)
-    }
-  }
 }, defaultState)
 
