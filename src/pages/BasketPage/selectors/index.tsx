@@ -1,3 +1,4 @@
+import { cartPageType } from "../components/BasketPage";
 
 
-export const cartPageSelector = (state: any) => state.cartPage
+export const cartPageSelector = (state: { cartPage: cartPageType }) => state.cartPage

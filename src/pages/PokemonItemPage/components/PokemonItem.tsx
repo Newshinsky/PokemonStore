@@ -3,7 +3,9 @@ import 'animate.css';
 import React, { memo } from 'react';
 import FirstButton from '../../../components/Button/DefaultButton/CustomButton';
 import Loaders from '../../../components/Loaders/Loaders';
+import SnackBar from "../../../components/SnackBar/SnackBar";
 import { STATS_ICONS } from '../../../constants/StatsIcons';
+import { cartItemsListPageType } from "../../BasketPage/components/BasketPage";
 import { pokemonItemType } from '../containers/PokemonItemPageContainer';
 import styles from "./pokemonItem.module.css";
 
@@ -30,6 +32,9 @@ type PropsType = {
   pokemonItem: pokemonItemType,
   isLoading: boolean,
   addItemCart: (id: number) => void
+  open: boolean,
+  itemsList: any,
+  handleClose: (event?: React.SyntheticEvent | Event, reason?: string) => void
 }
 const animationName = "animate__animated  animate__fadeInDownBig  animate__slow"
 const PokemonItem = memo((props: PropsType) => {
@@ -51,7 +56,10 @@ const PokemonItem = memo((props: PropsType) => {
                   return <p key={i}>{i + 1}: {e.title.toLocaleUpperCase()}</p>
                 })}
               </div>
-              <FirstButton handleClick={() => props.addItemCart(props.pokemonItem.id)} buttonName={'Add'} />
+              <FirstButton
+                handleClick={() => props.addItemCart(props.pokemonItem.id)}
+                buttonName={'Add'}
+                disabled={props.itemsList.find((e: cartItemsListPageType) => e.id === props.pokemonItem.id)} />
             </div>
             <div className={`${styles.pokemonSkills}  ${animationName} animate__delay-2s`}>
               {props.pokemonItem.stats.map((e, i) => {
@@ -67,6 +75,7 @@ const PokemonItem = memo((props: PropsType) => {
               })}
             </div>
           </div>
+          <SnackBar open={props.open} text={"Pokemon added to cart"} handleClose={props.handleClose} />
         </div>
       }
     </>)

@@ -10,17 +10,18 @@ const ProfilePageContainer = () => {
   const dispatch = useDispatch()
 
   const { orderHistory } = useSelector(profilePageSelector)
-  const { userData } = useSelector(authSelector)
+  const { userData, isLoading } = useSelector(authSelector)
 
   useEffect(() => {
     dispatch(GET_ORDER_REQUEST())
-  }, [])
+  }, [dispatch])
 
   return (
     <>
       <ProfilePage
         userData={userData}
-        orderHistory={orderHistory} /></
+        orderHistory={orderHistory}
+        isLoading={isLoading} /></
     >
   )
 }

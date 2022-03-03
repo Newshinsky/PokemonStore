@@ -14,7 +14,11 @@ const BasketPageContainer = () => {
         itemsList,
         getCartState,
         deleteItemCart,
-        updateItemCart, customerId } = useCart()
+        updateItemCart,
+        customerId,
+        isLoading,
+        open,
+        handleClose, handleClick } = useCart()
 
     useEffect(() => {
         getCartState()
@@ -27,6 +31,11 @@ const BasketPageContainer = () => {
             itemsList: itemsList,
         }
         dispatch(CONFIRM_ORDER_REQUEST(profileOrderData))
+        handleClick()
+        setTimeout(() => {
+            getCartState()
+        }, 1000)
+
     }
 
     return (
@@ -40,7 +49,9 @@ const BasketPageContainer = () => {
                     totalPrice={totalPrice}
                     updateItemCart={updateItemCart}
                     addOrderHandler={addOrderHandler}
-
+                    isLoading={isLoading}
+                    open={open}
+                    handleClose={handleClose}
                 />}
         </div>
     )

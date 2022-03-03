@@ -24,7 +24,7 @@ const PokemonsPageContainer = () => {
     const dispatch = useDispatch()
 
     const { isLoading, pokemonsList } = useSelector<AppRootStateType, PokemonPageType>(pokemonsPageSelector)
-    const { addItemCart } = useCart()
+    const { addItemCart, open, handleClose, itemsList } = useCart()
 
     const initialPage = localStorage.getItem('page')
 
@@ -48,7 +48,9 @@ const PokemonsPageContainer = () => {
                 isLoading={isLoading}
                 page={page}
                 addItemCart={addItemCart}
-
+                open={open}
+                handleClose={handleClose}
+                itemsList={itemsList}
             />
         </div>
     )

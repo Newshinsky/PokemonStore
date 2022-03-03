@@ -1,7 +1,7 @@
 import { Badge } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, NavLink, Route } from 'react-router-dom'
 import { useCart } from '../../hooks'
 import home from "../../images/home.png"
 import pikachu from "../../images/pikachu.png"
@@ -24,9 +24,14 @@ const NavBar = () => {
     const { isAuth } = useSelector(authSelector)
     const { quantity } = useCart()
 
+    useEffect(() => {
+        window.location.hash = '#/PokemonStore/'
+    }, [isAuth])
+
     return (
         <  >
             {isAuth ?
+
                 <div id="nav" className={`${styles.nav}`}>
                     <div className={`${styles.icon}`}>
                         <ul>
@@ -88,9 +93,11 @@ const NavBar = () => {
                             buttonName="Sign Out"
                             handleClick={() => AuthService.signOut()}
                         />
+
                     </div>
                 </div>
-                : ""
+                : <h1 className={styles.loginText}> Login Please </h1>
+
             }
         </ >
     )

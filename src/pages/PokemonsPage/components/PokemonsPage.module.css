@@ -17,6 +17,7 @@
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 40px 0;
+    cursor: pointer;
 }
 
 .container .card {

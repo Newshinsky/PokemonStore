@@ -44,14 +44,20 @@ const PokemonItemPageContainer = () => {
     const dispatch = useDispatch()
     const { pokemonName } = useParams()
     const { pokemonItem, isLoading } = useSelector(pokemonsItemSelector)
-    const { addItemCart } = useCart()
+    const { addItemCart, open, handleClose, itemsList } = useCart()
 
     useEffect(() => {
         dispatch(GET_POKEMON_ITEM_REQUEST(pokemonName))
     }, [dispatch, pokemonName])
     return (
         <>
-            <PokemonItem addItemCart={addItemCart} pokemonItem={pokemonItem} isLoading={isLoading} />
+            <PokemonItem
+                addItemCart={addItemCart}
+                pokemonItem={pokemonItem}
+                isLoading={isLoading}
+                open={open}
+                handleClose={handleClose}
+                itemsList={itemsList} />
         </>
     )
 }

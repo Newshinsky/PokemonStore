@@ -1,19 +1,33 @@
-import React, { memo } from 'react'
-import styles from "./BasketPage.module.css"
-
 import 'animate.css';
+import React, { memo } from 'react';
 import CustomButton from '../../../components/Button/DefaultButton/CustomButton';
+import SnackBar from '../../../components/SnackBar/SnackBar';
+import styles from "./BasketPage.module.css";
+
 
 type PropsType = {
-    itemsList: cartPageType[];
+    itemsList: cartItemsListPageType[];
     quantity: number,
     totalPrice: number,
     deleteItemCart: (id: number) => void,
     updateItemCart: (id: number, itemQuantity: number) => void,
-    addOrderHandler: () => void
+    addOrderHandler: () => void,
+    isLoading: boolean,
+    open: any,
+    handleClose: any
 }
 
 export type cartPageType = {
+    totalPrice: number,
+    quantity: number,
+    _id: string,
+    customerId: string,
+    itemsList: cartItemsListPageType[]
+    isLoading: false,
+    errors: null,
+}
+
+export type cartItemsListPageType = {
     id: number
     image: string
     name: string
@@ -36,7 +50,7 @@ const BasketPage = memo((props: PropsType) => {
                     handleClick={() => props.addOrderHandler()}
                 />
             </div>
-            {props.itemsList.map((e: cartPageType, i: number) =>
+            {props.itemsList.map((e: cartItemsListPageType, i: number) =>
                 <div key={i} className={`${styles.basketPageContainer} ${animationName}`} >
                     <div className={`${styles.basketImage}`}>
                         <img src={e.image} alt="pokemonImage" />
@@ -48,24 +62,27 @@ const BasketPage = memo((props: PropsType) => {
                     </div>
                     <div className={`${styles.buttonsWrapper}`} >
                         <button
-                            disabled={e.quantity === 1}
+                            disabled={e.quantity === 1 || props.isLoading}
                             onClick={() => props.updateItemCart(e.id, e.quantity - 1)}
                             className={`${styles.button}`}>
                             -
                         </button>
                         <button
+                            disabled={props.isLoading}
                             onClick={() => props.deleteItemCart(e.id)}
                             className={`${styles.cornerButton} `}>
                             Delete
                         </button>
                         <button
+                            disabled={props.isLoading}
                             onClick={() => props.updateItemCart(e.id, e.quantity + 1)}
                             className={`${styles.button}`}>
                             +
                         </button>
                     </div>
                 </div>)}
-        </div>
+            <SnackBar text={"Thanks for your order"} open={props.open} handleClose={props.handleClose} />
+        </div >
     )
 })
 

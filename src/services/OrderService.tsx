@@ -1,5 +1,12 @@
 import api from "../api/config";
+import { cartItemsListPageType } from "../pages/BasketPage/components/BasketPage";
 
+
+export type confirmOrderCartType = {
+    customerId: string,
+    totalPrice: number,
+    itemsList: cartItemsListPageType[],
+}
 
 export class OrderService {
 
@@ -9,7 +16,7 @@ export class OrderService {
         return api.get(`/order`)
     }
 
-    static confirmOrderCart(curtomerInfo: any) {
+    static confirmOrderCart(curtomerInfo: confirmOrderCartType) {
         return api.post(`/order`, curtomerInfo)
     }
 }

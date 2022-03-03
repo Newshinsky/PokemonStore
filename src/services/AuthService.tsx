@@ -5,6 +5,20 @@ export type SignInType = {
     password: string
 }
 
+export type signDataType = {
+    email: string,
+    firstName: string,
+    lastName: string,
+    address: {
+        country: string,
+        city: string,
+        addressLine1: string,
+        addressLine2: string,
+    },
+    gender: string,
+    password: string,
+    phone: string
+}
 export class AuthService {
 
     static instance = new AuthService()
@@ -15,7 +29,7 @@ export class AuthService {
         }
         return api.post(`/auth/signIn`, authData)
     }
-    static signUp(signData: any) {
+    static signUp(signData: signDataType) {
         return api.post(`/auth/signup`, signData)
     }
 

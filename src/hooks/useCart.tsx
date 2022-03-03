@@ -1,13 +1,29 @@
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ADD_ITEM_CART_REQUEST, DELETE_ITEM_CART_REQUEST, GET_CART_REQUEST, UPDATE_ITEM_CART_REQUEST } from '../pages/BasketPage/actions'
+import { cartItemsListPageType } from '../pages/BasketPage/components/BasketPage'
 import { cartPageSelector } from '../pages/BasketPage/selectors'
 import { pokemonsPageSelector } from '../pages/PokemonsPage/selectors'
 
 export const useCart = () => {
 
     const dispatch = useDispatch()
-    const { itemsList, quantity, totalPrice, errors, customerId } = useSelector(cartPageSelector)
+
+    const [open, setOpen] = useState(false);
+
+    const handleClick = () => {
+        setOpen(true);
+    };
+
+    const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
+
+    const { itemsList, quantity, totalPrice, errors, customerId, isLoading } = useSelector(cartPageSelector)
     const { pokemonsList } = useSelector(pokemonsPageSelector)
 
     const getCartState = useCallback(() => {
@@ -25,8 +41,9 @@ export const useCart = () => {
     const addItemCart = (id: number) => {
         const cartPoke = pokemonsList.find(e => e.id === id)
         dispatch(ADD_ITEM_CART_REQUEST({ ...cartPoke, quantity: 1 }))
+        itemsList.some((poke: cartItemsListPageType) => poke.id === id) || handleClick()
     }
     return (
-        { customerId, errors, totalPrice, quantity, itemsList, addItemCart, updateItemCart, deleteItemCart, getCartState }
+        { open, isLoading, handleClose, handleClick, customerId, errors, totalPrice, quantity, itemsList, addItemCart, updateItemCart, deleteItemCart, getCartState }
     )
 }
