@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/PokemonStore/static/css/main.db261a6d.css",
-    "main.js": "/PokemonStore/static/js/main.2aff6fde.js",
+    "main.css": "/PokemonStore/static/css/main.964dfbae.css",
+    "main.js": "/PokemonStore/static/js/main.109d20fc.js",
     "static/js/787.e9e625c3.chunk.js": "/PokemonStore/static/js/787.e9e625c3.chunk.js",
     "static/media/png-transparent-shopping-einkaufskorb-plastic-basket-others-miscellaneous-material-trade.png": "/PokemonStore/static/media/png-transparent-shopping-einkaufskorb-plastic-basket-others-miscellaneous-material-trade.f8108de30258b8396c50.png",
     "static/media/shield.png": "/PokemonStore/static/media/shield.473fc8ca18efa5b8babd.png",
@@ -17,12 +17,12 @@
     "static/media/home.png": "/PokemonStore/static/media/home.f7091fc33a72f1fa7e67.png",
     "static/media/shopping-cart.png": "/PokemonStore/static/media/shopping-cart.97dedf051bf87f5a4db4.png",
     "index.html": "/PokemonStore/index.html",
-    "main.db261a6d.css.map": "/PokemonStore/static/css/main.db261a6d.css.map",
-    "main.2aff6fde.js.map": "/PokemonStore/static/js/main.2aff6fde.js.map",
+    "main.964dfbae.css.map": "/PokemonStore/static/css/main.964dfbae.css.map",
+    "main.109d20fc.js.map": "/PokemonStore/static/js/main.109d20fc.js.map",
     "787.e9e625c3.chunk.js.map": "/PokemonStore/static/js/787.e9e625c3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.db261a6d.css",
-    "static/js/main.2aff6fde.js"
+    "static/css/main.964dfbae.css",
+    "static/js/main.109d20fc.js"
   ]
 }
