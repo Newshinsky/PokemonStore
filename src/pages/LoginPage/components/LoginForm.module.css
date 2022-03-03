@@ -1,0 +1,61 @@
+.loginBox {
+    margin-top: 100px;
+    width: 350px;
+    height: 100%;
+    padding: 70px 40px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.loginBox h2 {
+    margin: 0;
+    padding: 0 0 26px;
+    color: #ff8c00;
+    text-align: center;
+}
+
+
+.loginBox button {
+    margin: 10% 25%
+}
+
+.loginBox select option {
+    color: #ff8c00;
+}
+
+.loginBox input,
+.loginBox select {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.loginBox input[type="email"],
+.loginBox input[type="password"],
+.loginBox input[type="text"],
+.loginBox select {
+
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+.loginBox a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.error {
+    color: #ff1966;
+    ;
+}

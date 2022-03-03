@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { useCart } from '../../../hooks'
 
 import { GET_POKEMON_ITEM_REQUEST } from '../actions'
 import PokemonItem from '../components/PokemonItem'
@@ -28,12 +29,13 @@ export type pokemonItemType = {
     name: string
     price: number
     stats: pokemonStats[]
+    id: number
 }
 
 export type pokemonItemPageType = {
     pokemonItem: pokemonItemType,
-    isLoading: false,
-    errors: null,
+    isLoading: boolean,
+    errors: null | string,
 }
 
 
@@ -42,14 +44,20 @@ const PokemonItemPageContainer = () => {
     const dispatch = useDispatch()
     const { pokemonName } = useParams()
     const { pokemonItem, isLoading } = useSelector(pokemonsItemSelector)
-
+    const { addItemCart, open, handleClose, itemsList } = useCart()
 
     useEffect(() => {
         dispatch(GET_POKEMON_ITEM_REQUEST(pokemonName))
     }, [dispatch, pokemonName])
     return (
         <>
-            <PokemonItem pokemonItem={pokemonItem} isLoading={isLoading} />
+            <PokemonItem
+                addItemCart={addItemCart}
+                pokemonItem={pokemonItem}
+                isLoading={isLoading}
+                open={open}
+                handleClose={handleClose}
+                itemsList={itemsList} />
         </>
     )
 }

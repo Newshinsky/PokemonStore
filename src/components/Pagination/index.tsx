@@ -1,5 +1,5 @@
 import { Pagination } from '@mui/material';
-import React from 'react';
+import React, { memo } from 'react';
 import Stack from '@mui/material/Stack';
 
 type PaginationType = {
@@ -9,7 +9,7 @@ type PaginationType = {
 }
 
 
-const CustomPagination = React.memo((props: PaginationType) => {
+const CustomPagination = memo((props: PaginationType) => {
     return (
         <Stack spacing={2}  >
             <Pagination color="primary"
@@ -28,7 +28,6 @@ const CustomPagination = React.memo((props: PaginationType) => {
                 hidePrevButton
                 count={props.pageAmount}
                 shape='rounded'
-
             />
         </Stack >
 

@@ -1,6 +1,7 @@
 import axios from "axios";
+import { LOCAL_STORAGE_KEY } from "../constants/LocalStorageKey";
 
-let Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjA2OGYzYzBmZDdmNDAwMGY3MWMzN2YiLCJyb2xlcyI6WyJjdXN0b21lciJdLCJpYXQiOjE2NDUwMDM2MjQsImV4cCI6MTY0NTA5MDAyNH0.sJCUk_OELFyFCYlZvEKvPkG6NEZqCTQdIOBHO6FcSbw"
+
 
 const config = {
     baseURL: `https://it-shatle-demo-api.herokuapp.com`,
@@ -8,10 +9,17 @@ const config = {
         Accept: "application/json",
         "Content-Type": "application/json",
         Pragma: "no-cache",
-        "Authorization": `Bearer ${Token}`
     },
 }
 const api = axios.create(config);
 
+api.interceptors.request.use(((axiosConfig) => {
+    const accessToken = localStorage.getItem(LOCAL_STORAGE_KEY.ACCESS_TOKEN)
+
+    axiosConfig.headers!.Authorization = `Bearer ${accessToken}`;
+
+    return axiosConfig;
+
+}))
 
 export default api;

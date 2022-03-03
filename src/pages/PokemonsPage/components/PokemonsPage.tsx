@@ -1,26 +1,31 @@
-import React, { ChangeEvent } from 'react'
+import { Alert, Snackbar } from '@mui/material'
+import React, { ChangeEvent, memo } from 'react'
 import { Link } from 'react-router-dom'
-
-import FirstButton from '../../../components/Button/FirstButton/CustomButton'
+import FirstButton from '../../../components/Button/DefaultButton/CustomButton'
 import Loaders from '../../../components/Loaders/Loaders'
 import CustomPagination from '../../../components/Pagination'
+import SnackBar from '../../../components/SnackBar/SnackBar'
 import { ROUTES_NAMES } from '../../../routes/RoutesNames'
+import { cartItemsListPageType } from '../../BasketPage/components/BasketPage'
 import { PokemonsListType } from '../containers/PokemonsPageContainer'
-
 import styles from "./PokemonsPage.module.css"
+
+
 
 
 
 type PropsType = {
   pokemonsList: PokemonsListType[],
   isLoading: boolean,
-  sortBy: () => void
-  handlePageChange: (event: ChangeEvent<unknown>, page: number) => void
-  page: number
+  handlePageChange: (event: ChangeEvent<unknown>, page: number) => void,
+  page: number,
+  addItemCart: (id: number) => void,
+  open: boolean,
+  itemsList: any
+  handleClose: (event?: React.SyntheticEvent | Event, reason?: string) => void
 }
 
-const PokemonsPage = React.memo((props: PropsType) => {
-
+const PokemonsPage = memo((props: PropsType) => {
   return (
     <>
       <CustomPagination
@@ -43,10 +48,15 @@ const PokemonsPage = React.memo((props: PropsType) => {
                       <Link to={`${ROUTES_NAMES.POKEMON}/${e.id}`} >
                         Read More
                       </Link>
-                      <FirstButton buttonMove="Add" />
+                      <FirstButton
+                        handleClick={() => props.addItemCart(e.id)}
+                        buttonName="Add"
+                        disabled={props.itemsList.find((poke: cartItemsListPageType) => poke.id === e.id)}
+                      />
                     </div>
                   </div>
                 </div>
+                <SnackBar open={props.open} text={"Pokemon added to cart"} handleClose={props.handleClose} />
               </div>
             )
         }
